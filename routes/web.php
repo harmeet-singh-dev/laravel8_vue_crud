@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,18 +30,21 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-        Route::get('/dashboard', function () {
-            return Inertia::render('Dashboard');
-        })->name('dashboard');
+Route::get('/dashboard',[TaskController::class, 'index'])->name('index');
+Route::get('/topic',[TaskController::class, 'topic'])->name('topic');
+Route::post('topic/create',[TaskController::class, 'create'])->name('create');
+Route::get('/speaker',[TaskController::class, 'speaker'])->name('speaker');
+Route::post('speaker/create',[TaskController::class, 'speaker_create'])->name('speaker_create');
+Route::get('/course',[TaskController::class, 'course'])->name('course');
+Route::post('course/create',[TaskController::class, 'course_create'])->name('course_create');
+Route::get('/course-speaker',[TaskController::class, 'course_speaker'])->name('course-speaker');
+Route::post('course-speaker/create',[TaskController::class, 'course_speaker_create'])->name('course_speaker_create');
+Route::post('topic/search/{id}',[TaskController::class, 'search'])->name('search');
+
 
 
 });
 
-Route::get('/data',[Controller::class, 'index'])->name('data');
-Route::post('/store',[Controller::class, 'store'])->name('store');
-Route::get('/all-data',[Controller::class, 'getData'])->name('data.all');
-Route::get('/single-data/{id}',[Controller::class,'singleData']);
-Route::get('/update/{detail}',[Controller::class, 'update'])->name('update');
-Route::post('/update/{detail}', [Controller::class, 'edit'])->name('edit');
+
 
 

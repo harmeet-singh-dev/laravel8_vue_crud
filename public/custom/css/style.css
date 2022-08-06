@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
+
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+/* Form design */
+.selectionBoxForm .form-group select.form-select {
+	width: 25rem;
+}
+
+.selectionBoxForm button.btn {
+	color: #fff;
+	background-color: #4e73df;
+	border-color: #4e73df;
+	border-radius: 03px;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.bg-primary,
+.btn-primary {
+	background-color: #4e73df !important;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #2e59d9 !important;
+	border-color: #2653d4 !important;
+}
+
+.selectionBoxForm {
+	display: flex;
+	gap: 20px;
+}
+
+.border-left-primary {
+	border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-left-warning {
+	border-left: 0.25rem solid #f6c23e !important;
+}
+
+.border-left-success {
+	border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+	border-left: 0.25rem solid #36b9cc !important;
+}
+
+.text-xs {
+	font-size: .7rem;
+}
+
+.task-listing ul {
+	list-style-type: none;
+}
+
+.task-listing ul li {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 10px;
+}
+
+.task-listing p {
+	margin-bottom: 0;
+	color: #e1e1e1;
+}
+
+.error-txt {
+	color: red;
+}
+
+
+.bg-register-image {
+	background: url('../img/task-img.png')no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.taskSection {
+	height: 100vh;
+}
+
+.taskSection form input,
+.taskSection form textarea {
+	font-size: .8rem;
+}
+
+.taskSection form input {
+	min-height: 52px;
+	padding: 15px;
+}
+
+.taskSection form a.btn {
+	width: 100%;
+	display: flex;
+	min-height: 52px;
+	justify-content: center;
+	align-items: center;
+}
+
+.taskRow {
+	min-height: 500px;
+}
+
+.profileLogin .dropdown-menu[data-bs-popper]{
+	left:auto;
+	right:0;
+}
+.profileLogin{    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    background: #cbcbcb;
+}
+
+.profileLogin .dropdown-toggle {
+	color:rgb(33 37 41);
+	padding:10px;
+}
+.profileLogin .dropdown-toggle::after{
+	position: absolute;
+    right: 1rem;
+    top: 1.1rem;
+}
+
+
+@media(min-width:992px){
+	.profileLogin .dropdown-toggle{    min-width: 150px;}
+}
+
+
+@media(max-width:991px) {
+	.taskRow {
+		min-height: auto;
+	}
+}
+
+@media(max-width:767px) {
+	.selectionBoxForm .form-group select.form-select {
+		width: 15rem;
+	}
+}

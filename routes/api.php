@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
+Route::get('/user/setup-intent', 'API\UserController@getSetupIntent');
+Route::post('/user/payments', 'API\UserController@postPaymentMethods');
+Route::get('/user/payment-methods', 'API\UserController@getPaymentMethods');
+Route::post('/user/remove-payment', 'API\UserController@removePaymentMethod');
+Route::put('/user/subscription', 'API\UserController@updateSubscription');
+});
 
 
